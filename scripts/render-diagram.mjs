@@ -1,0 +1,5 @@
+import {chromium} from '@playwright/test';
+import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
+const svg=await readFile('docs/diagramas/modelo.svg','utf8');
+const browser=await chromium.launch();
+try{const page=await browser.newPage({viewport:{width:5600,height:1800},deviceScaleFactor:1});await page.setContent(`<html><body style="margin:0;background:#f7f8f4">${svg}</body></html>`);const dims=await page.locator('svg').evaluate(e=>{e.setAttribute('width','5600');e.removeAttribute('height');return e.getBoundingClientRect().height});await page.setViewportSize({width:5600,height:Math.ceil(dims)});await mkdir('entrega',{recursive:true});await page.screenshot({path:'docs/diagramas/modelo.png',fullPage:true});await copyFile('docs/diagramas/modelo.png','entrega/PENDIENTE_Nombre_DER_Lab3.png');await writeFile('evidencias/diagramas.json',JSON.stringify({source:'PostgreSQL information_schema y pg_constraint',width:5600,height:Math.ceil(dims)},null,2));}finally{await browser.close()}

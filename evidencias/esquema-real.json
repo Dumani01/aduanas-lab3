@@ -1,0 +1,1896 @@
+{
+  "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35229, 64-bit",
+  "columns": [
+    {
+      "table_name": "agentes",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "agentes",
+      "column_name": "licencia",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(40)"
+    },
+    {
+      "table_name": "agentes",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "agentes",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    },
+    {
+      "table_name": "bodegas",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "bodegas",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(30)"
+    },
+    {
+      "table_name": "bodegas",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "bodegas",
+      "column_name": "capacidad_kg",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "numeric(16,3)"
+    },
+    {
+      "table_name": "bodegas",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    },
+    {
+      "table_name": "contenedores",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "contenedores",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(30)"
+    },
+    {
+      "table_name": "contenedores",
+      "column_name": "declaracion_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "contenedores",
+      "column_name": "pais_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "contenedores",
+      "column_name": "fecha_recepcion",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "date"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "numero",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(40)"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "operador_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "agente_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "fecha",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "date"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "regimen",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(20)"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "estado",
+      "is_nullable": "NO",
+      "column_default": "'REGISTRADA'::character varying",
+      "tipo": "character varying(20)"
+    },
+    {
+      "table_name": "declaraciones",
+      "column_name": "moneda",
+      "is_nullable": "NO",
+      "column_default": "'USD'::bpchar",
+      "tipo": "character(3)"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "declaracion_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "linea",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "integer"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "producto_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "pais_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "cantidad",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "numeric(16,3)"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "valor_unitario",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "numeric(16,4)"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "tarifa_aplicada",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "numeric(6,3)"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "producto_nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "detalles",
+      "column_name": "unidad",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(10)"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "lote_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "usuario_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "accion",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(30)"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "motivo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(500)"
+    },
+    {
+      "table_name": "eventos",
+      "column_name": "fecha",
+      "is_nullable": "NO",
+      "column_default": "now()",
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "existencias",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "existencias",
+      "column_name": "lote_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "existencias",
+      "column_name": "bodega_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "existencias",
+      "column_name": "cantidad",
+      "is_nullable": "NO",
+      "column_default": "0",
+      "tipo": "numeric(16,3)"
+    },
+    {
+      "table_name": "funcionarios",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "funcionarios",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(30)"
+    },
+    {
+      "table_name": "funcionarios",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "funcionarios",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "lote_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "funcionario_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "resultado",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(15)"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "observaciones",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(1000)"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "fecha",
+      "is_nullable": "NO",
+      "column_default": "now()",
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "inspecciones",
+      "column_name": "usuario_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(40)"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "detalle_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "estado",
+      "is_nullable": "NO",
+      "column_default": "'RETENIDO'::character varying",
+      "tipo": "character varying(15)"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "creado_en",
+      "is_nullable": "NO",
+      "column_default": "now()",
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "lotes",
+      "column_name": "liberado_en",
+      "is_nullable": "YES",
+      "column_default": null,
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "lote_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "bodega_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "tipo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(20)"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "cantidad",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "numeric(16,3)"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "fecha",
+      "is_nullable": "NO",
+      "column_default": "now()",
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "motivo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(500)"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "usuario_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "movimientos",
+      "column_name": "operacion_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "uuid"
+    },
+    {
+      "table_name": "operaciones",
+      "column_name": "clave",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "uuid"
+    },
+    {
+      "table_name": "operaciones",
+      "column_name": "usuario_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "operaciones",
+      "column_name": "payload",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "jsonb"
+    },
+    {
+      "table_name": "operaciones",
+      "column_name": "creado_en",
+      "is_nullable": "NO",
+      "column_default": "now()",
+      "tipo": "timestamp with time zone"
+    },
+    {
+      "table_name": "operadores",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "operadores",
+      "column_name": "identificacion",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(40)"
+    },
+    {
+      "table_name": "operadores",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "operadores",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    },
+    {
+      "table_name": "paises",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "paises",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character(2)"
+    },
+    {
+      "table_name": "paises",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(100)"
+    },
+    {
+      "table_name": "partidas",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "partidas",
+      "column_name": "codigo",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(20)"
+    },
+    {
+      "table_name": "partidas",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "partidas",
+      "column_name": "tarifa",
+      "is_nullable": "NO",
+      "column_default": "0",
+      "tipo": "numeric(6,3)"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "sku",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(40)"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(160)"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "partida_id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "unidad",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(10)"
+    },
+    {
+      "table_name": "productos",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "sid",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying"
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "sess",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "json"
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "expire",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "timestamp without time zone"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "bigint"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "nombre",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(100)"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "password_hash",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "text"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "rol",
+      "is_nullable": "NO",
+      "column_default": null,
+      "tipo": "character varying(15)"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "activo",
+      "is_nullable": "NO",
+      "column_default": "true",
+      "tipo": "boolean"
+    }
+  ],
+  "constraints": [
+    {
+      "conname": "agentes_activo_not_null",
+      "tabla": "agentes",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "agentes_id_not_null",
+      "tabla": "agentes",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "agentes_licencia_key",
+      "tabla": "agentes",
+      "contype": "u",
+      "definition": "UNIQUE (licencia)",
+      "referencia": null
+    },
+    {
+      "conname": "agentes_licencia_not_null",
+      "tabla": "agentes",
+      "contype": "n",
+      "definition": "NOT NULL licencia",
+      "referencia": null
+    },
+    {
+      "conname": "agentes_nombre_not_null",
+      "tabla": "agentes",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "agentes_pkey",
+      "tabla": "agentes",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_activo_not_null",
+      "tabla": "bodegas",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_capacidad_kg_check",
+      "tabla": "bodegas",
+      "contype": "c",
+      "definition": "CHECK ((capacidad_kg > (0)::numeric))",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_capacidad_kg_not_null",
+      "tabla": "bodegas",
+      "contype": "n",
+      "definition": "NOT NULL capacidad_kg",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_codigo_key",
+      "tabla": "bodegas",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_codigo_not_null",
+      "tabla": "bodegas",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_id_not_null",
+      "tabla": "bodegas",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_nombre_not_null",
+      "tabla": "bodegas",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "bodegas_pkey",
+      "tabla": "bodegas",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_codigo_key",
+      "tabla": "contenedores",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_codigo_not_null",
+      "tabla": "contenedores",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_declaracion_id_fkey",
+      "tabla": "contenedores",
+      "contype": "f",
+      "definition": "FOREIGN KEY (declaracion_id) REFERENCES aduana.declaraciones(id)",
+      "referencia": "declaraciones"
+    },
+    {
+      "conname": "contenedores_declaracion_id_not_null",
+      "tabla": "contenedores",
+      "contype": "n",
+      "definition": "NOT NULL declaracion_id",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_fecha_recepcion_not_null",
+      "tabla": "contenedores",
+      "contype": "n",
+      "definition": "NOT NULL fecha_recepcion",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_id_not_null",
+      "tabla": "contenedores",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_pais_id_fkey",
+      "tabla": "contenedores",
+      "contype": "f",
+      "definition": "FOREIGN KEY (pais_id) REFERENCES aduana.paises(id)",
+      "referencia": "paises"
+    },
+    {
+      "conname": "contenedores_pais_id_not_null",
+      "tabla": "contenedores",
+      "contype": "n",
+      "definition": "NOT NULL pais_id",
+      "referencia": null
+    },
+    {
+      "conname": "contenedores_pkey",
+      "tabla": "contenedores",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_agente_id_fkey",
+      "tabla": "declaraciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (agente_id) REFERENCES aduana.agentes(id)",
+      "referencia": "agentes"
+    },
+    {
+      "conname": "declaraciones_agente_id_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL agente_id",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_estado_check",
+      "tabla": "declaraciones",
+      "contype": "c",
+      "definition": "CHECK (((estado)::text = ANY ((ARRAY['REGISTRADA'::character varying, 'ANULADA'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_estado_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL estado",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_fecha_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL fecha",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_id_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_moneda_check",
+      "tabla": "declaraciones",
+      "contype": "c",
+      "definition": "CHECK ((moneda = 'USD'::bpchar))",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_moneda_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL moneda",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_numero_key",
+      "tabla": "declaraciones",
+      "contype": "u",
+      "definition": "UNIQUE (numero)",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_numero_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL numero",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_operador_id_fkey",
+      "tabla": "declaraciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (operador_id) REFERENCES aduana.operadores(id)",
+      "referencia": "operadores"
+    },
+    {
+      "conname": "declaraciones_operador_id_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL operador_id",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_pkey",
+      "tabla": "declaraciones",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_regimen_check",
+      "tabla": "declaraciones",
+      "contype": "c",
+      "definition": "CHECK (((regimen)::text = ANY ((ARRAY['IMPORTACION'::character varying, 'EXPORTACION'::character varying, 'TRANSITO'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "declaraciones_regimen_not_null",
+      "tabla": "declaraciones",
+      "contype": "n",
+      "definition": "NOT NULL regimen",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_cantidad_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK ((cantidad > (0)::numeric))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_cantidad_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL cantidad",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK ((((unidad)::text <> 'unidad'::text) OR (cantidad = trunc(cantidad))))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_declaracion_id_fkey",
+      "tabla": "detalles",
+      "contype": "f",
+      "definition": "FOREIGN KEY (declaracion_id) REFERENCES aduana.declaraciones(id)",
+      "referencia": "declaraciones"
+    },
+    {
+      "conname": "detalles_declaracion_id_linea_key",
+      "tabla": "detalles",
+      "contype": "u",
+      "definition": "UNIQUE (declaracion_id, linea)",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_declaracion_id_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL declaracion_id",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_id_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_linea_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK ((linea > 0))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_linea_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL linea",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_pais_id_fkey",
+      "tabla": "detalles",
+      "contype": "f",
+      "definition": "FOREIGN KEY (pais_id) REFERENCES aduana.paises(id)",
+      "referencia": "paises"
+    },
+    {
+      "conname": "detalles_pais_id_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL pais_id",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_pkey",
+      "tabla": "detalles",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_producto_id_fkey",
+      "tabla": "detalles",
+      "contype": "f",
+      "definition": "FOREIGN KEY (producto_id) REFERENCES aduana.productos(id)",
+      "referencia": "productos"
+    },
+    {
+      "conname": "detalles_producto_id_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL producto_id",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_producto_nombre_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL producto_nombre",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_tarifa_aplicada_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK (((tarifa_aplicada >= (0)::numeric) AND (tarifa_aplicada <= (100)::numeric)))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_tarifa_aplicada_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL tarifa_aplicada",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_unidad_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK (((unidad)::text = ANY ((ARRAY['unidad'::character varying, 'kg'::character varying, 'litro'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_unidad_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL unidad",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_valor_unitario_check",
+      "tabla": "detalles",
+      "contype": "c",
+      "definition": "CHECK ((valor_unitario >= (0)::numeric))",
+      "referencia": null
+    },
+    {
+      "conname": "detalles_valor_unitario_not_null",
+      "tabla": "detalles",
+      "contype": "n",
+      "definition": "NOT NULL valor_unitario",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_accion_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL accion",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_fecha_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL fecha",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_id_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_lote_id_fkey",
+      "tabla": "eventos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (lote_id) REFERENCES aduana.lotes(id)",
+      "referencia": "lotes"
+    },
+    {
+      "conname": "eventos_lote_id_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL lote_id",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_motivo_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL motivo",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_pkey",
+      "tabla": "eventos",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "eventos_usuario_id_fkey",
+      "tabla": "eventos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES aduana.usuarios(id)",
+      "referencia": "usuarios"
+    },
+    {
+      "conname": "eventos_usuario_id_not_null",
+      "tabla": "eventos",
+      "contype": "n",
+      "definition": "NOT NULL usuario_id",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_bodega_id_fkey",
+      "tabla": "existencias",
+      "contype": "f",
+      "definition": "FOREIGN KEY (bodega_id) REFERENCES aduana.bodegas(id)",
+      "referencia": "bodegas"
+    },
+    {
+      "conname": "existencias_bodega_id_not_null",
+      "tabla": "existencias",
+      "contype": "n",
+      "definition": "NOT NULL bodega_id",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_cantidad_check",
+      "tabla": "existencias",
+      "contype": "c",
+      "definition": "CHECK ((cantidad >= (0)::numeric))",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_cantidad_not_null",
+      "tabla": "existencias",
+      "contype": "n",
+      "definition": "NOT NULL cantidad",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_id_not_null",
+      "tabla": "existencias",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_lote_id_bodega_id_key",
+      "tabla": "existencias",
+      "contype": "u",
+      "definition": "UNIQUE (lote_id, bodega_id)",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_lote_id_fkey",
+      "tabla": "existencias",
+      "contype": "f",
+      "definition": "FOREIGN KEY (lote_id) REFERENCES aduana.lotes(id)",
+      "referencia": "lotes"
+    },
+    {
+      "conname": "existencias_lote_id_not_null",
+      "tabla": "existencias",
+      "contype": "n",
+      "definition": "NOT NULL lote_id",
+      "referencia": null
+    },
+    {
+      "conname": "existencias_pkey",
+      "tabla": "existencias",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_activo_not_null",
+      "tabla": "funcionarios",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_codigo_key",
+      "tabla": "funcionarios",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_codigo_not_null",
+      "tabla": "funcionarios",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_id_not_null",
+      "tabla": "funcionarios",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_nombre_not_null",
+      "tabla": "funcionarios",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "funcionarios_pkey",
+      "tabla": "funcionarios",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_fecha_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL fecha",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_funcionario_id_fkey",
+      "tabla": "inspecciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (funcionario_id) REFERENCES aduana.funcionarios(id)",
+      "referencia": "funcionarios"
+    },
+    {
+      "conname": "inspecciones_funcionario_id_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL funcionario_id",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_id_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_lote_id_fkey",
+      "tabla": "inspecciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (lote_id) REFERENCES aduana.lotes(id)",
+      "referencia": "lotes"
+    },
+    {
+      "conname": "inspecciones_lote_id_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL lote_id",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_observaciones_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL observaciones",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_pkey",
+      "tabla": "inspecciones",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_resultado_check",
+      "tabla": "inspecciones",
+      "contype": "c",
+      "definition": "CHECK (((resultado)::text = ANY ((ARRAY['RETENER'::character varying, 'APROBADO'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_resultado_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL resultado",
+      "referencia": null
+    },
+    {
+      "conname": "inspecciones_usuario_id_fkey",
+      "tabla": "inspecciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES aduana.usuarios(id)",
+      "referencia": "usuarios"
+    },
+    {
+      "conname": "inspecciones_usuario_id_not_null",
+      "tabla": "inspecciones",
+      "contype": "n",
+      "definition": "NOT NULL usuario_id",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_check",
+      "tabla": "lotes",
+      "contype": "c",
+      "definition": "CHECK (((((estado)::text = 'RETENIDO'::text) AND (liberado_en IS NULL)) OR (((estado)::text = 'LIBERADO'::text) AND (liberado_en IS NOT NULL))))",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_codigo_key",
+      "tabla": "lotes",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_codigo_not_null",
+      "tabla": "lotes",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_creado_en_not_null",
+      "tabla": "lotes",
+      "contype": "n",
+      "definition": "NOT NULL creado_en",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_detalle_id_fkey",
+      "tabla": "lotes",
+      "contype": "f",
+      "definition": "FOREIGN KEY (detalle_id) REFERENCES aduana.detalles(id)",
+      "referencia": "detalles"
+    },
+    {
+      "conname": "lotes_detalle_id_not_null",
+      "tabla": "lotes",
+      "contype": "n",
+      "definition": "NOT NULL detalle_id",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_estado_check",
+      "tabla": "lotes",
+      "contype": "c",
+      "definition": "CHECK (((estado)::text = ANY ((ARRAY['RETENIDO'::character varying, 'LIBERADO'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_estado_not_null",
+      "tabla": "lotes",
+      "contype": "n",
+      "definition": "NOT NULL estado",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_id_not_null",
+      "tabla": "lotes",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "lotes_pkey",
+      "tabla": "lotes",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_bodega_id_fkey",
+      "tabla": "movimientos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (bodega_id) REFERENCES aduana.bodegas(id)",
+      "referencia": "bodegas"
+    },
+    {
+      "conname": "movimientos_bodega_id_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL bodega_id",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_cantidad_check",
+      "tabla": "movimientos",
+      "contype": "c",
+      "definition": "CHECK ((cantidad <> (0)::numeric))",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_cantidad_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL cantidad",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_check",
+      "tabla": "movimientos",
+      "contype": "c",
+      "definition": "CHECK (((((tipo)::text = ANY ((ARRAY['RECEPCION'::character varying, 'TRASLADO_ENTRADA'::character varying])::text[])) AND (cantidad > (0)::numeric)) OR (((tipo)::text = ANY ((ARRAY['SALIDA'::character varying, 'TRASLADO_SALIDA'::character varying])::text[])) AND (cantidad < (0)::numeric))))",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_fecha_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL fecha",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_id_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_lote_id_fkey",
+      "tabla": "movimientos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (lote_id) REFERENCES aduana.lotes(id)",
+      "referencia": "lotes"
+    },
+    {
+      "conname": "movimientos_lote_id_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL lote_id",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_motivo_check",
+      "tabla": "movimientos",
+      "contype": "c",
+      "definition": "CHECK ((length(TRIM(BOTH FROM motivo)) >= 3))",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_motivo_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL motivo",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_operacion_id_fkey",
+      "tabla": "movimientos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (operacion_id) REFERENCES aduana.operaciones(clave)",
+      "referencia": "operaciones"
+    },
+    {
+      "conname": "movimientos_operacion_id_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL operacion_id",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_pkey",
+      "tabla": "movimientos",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_tipo_check",
+      "tabla": "movimientos",
+      "contype": "c",
+      "definition": "CHECK (((tipo)::text = ANY ((ARRAY['RECEPCION'::character varying, 'TRASLADO_ENTRADA'::character varying, 'TRASLADO_SALIDA'::character varying, 'SALIDA'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_tipo_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL tipo",
+      "referencia": null
+    },
+    {
+      "conname": "movimientos_usuario_id_fkey",
+      "tabla": "movimientos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES aduana.usuarios(id)",
+      "referencia": "usuarios"
+    },
+    {
+      "conname": "movimientos_usuario_id_not_null",
+      "tabla": "movimientos",
+      "contype": "n",
+      "definition": "NOT NULL usuario_id",
+      "referencia": null
+    },
+    {
+      "conname": "operaciones_clave_not_null",
+      "tabla": "operaciones",
+      "contype": "n",
+      "definition": "NOT NULL clave",
+      "referencia": null
+    },
+    {
+      "conname": "operaciones_creado_en_not_null",
+      "tabla": "operaciones",
+      "contype": "n",
+      "definition": "NOT NULL creado_en",
+      "referencia": null
+    },
+    {
+      "conname": "operaciones_payload_not_null",
+      "tabla": "operaciones",
+      "contype": "n",
+      "definition": "NOT NULL payload",
+      "referencia": null
+    },
+    {
+      "conname": "operaciones_pkey",
+      "tabla": "operaciones",
+      "contype": "p",
+      "definition": "PRIMARY KEY (clave)",
+      "referencia": null
+    },
+    {
+      "conname": "operaciones_usuario_id_fkey",
+      "tabla": "operaciones",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES aduana.usuarios(id)",
+      "referencia": "usuarios"
+    },
+    {
+      "conname": "operaciones_usuario_id_not_null",
+      "tabla": "operaciones",
+      "contype": "n",
+      "definition": "NOT NULL usuario_id",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_activo_not_null",
+      "tabla": "operadores",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_id_not_null",
+      "tabla": "operadores",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_identificacion_key",
+      "tabla": "operadores",
+      "contype": "u",
+      "definition": "UNIQUE (identificacion)",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_identificacion_not_null",
+      "tabla": "operadores",
+      "contype": "n",
+      "definition": "NOT NULL identificacion",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_nombre_not_null",
+      "tabla": "operadores",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "operadores_pkey",
+      "tabla": "operadores",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "paises_codigo_key",
+      "tabla": "paises",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "paises_codigo_not_null",
+      "tabla": "paises",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "paises_id_not_null",
+      "tabla": "paises",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "paises_nombre_key",
+      "tabla": "paises",
+      "contype": "u",
+      "definition": "UNIQUE (nombre)",
+      "referencia": null
+    },
+    {
+      "conname": "paises_nombre_not_null",
+      "tabla": "paises",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "paises_pkey",
+      "tabla": "paises",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_codigo_key",
+      "tabla": "partidas",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_codigo_not_null",
+      "tabla": "partidas",
+      "contype": "n",
+      "definition": "NOT NULL codigo",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_id_not_null",
+      "tabla": "partidas",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_nombre_not_null",
+      "tabla": "partidas",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_pkey",
+      "tabla": "partidas",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_tarifa_check",
+      "tabla": "partidas",
+      "contype": "c",
+      "definition": "CHECK (((tarifa >= (0)::numeric) AND (tarifa <= (100)::numeric)))",
+      "referencia": null
+    },
+    {
+      "conname": "partidas_tarifa_not_null",
+      "tabla": "partidas",
+      "contype": "n",
+      "definition": "NOT NULL tarifa",
+      "referencia": null
+    },
+    {
+      "conname": "productos_activo_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "productos_id_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "productos_nombre_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "productos_partida_id_fkey",
+      "tabla": "productos",
+      "contype": "f",
+      "definition": "FOREIGN KEY (partida_id) REFERENCES aduana.partidas(id)",
+      "referencia": "partidas"
+    },
+    {
+      "conname": "productos_partida_id_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL partida_id",
+      "referencia": null
+    },
+    {
+      "conname": "productos_pkey",
+      "tabla": "productos",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "productos_sku_key",
+      "tabla": "productos",
+      "contype": "u",
+      "definition": "UNIQUE (sku)",
+      "referencia": null
+    },
+    {
+      "conname": "productos_sku_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL sku",
+      "referencia": null
+    },
+    {
+      "conname": "productos_unidad_check",
+      "tabla": "productos",
+      "contype": "c",
+      "definition": "CHECK (((unidad)::text = ANY ((ARRAY['unidad'::character varying, 'kg'::character varying, 'litro'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "productos_unidad_not_null",
+      "tabla": "productos",
+      "contype": "n",
+      "definition": "NOT NULL unidad",
+      "referencia": null
+    },
+    {
+      "conname": "sesiones_expire_not_null",
+      "tabla": "sesiones",
+      "contype": "n",
+      "definition": "NOT NULL expire",
+      "referencia": null
+    },
+    {
+      "conname": "sesiones_pkey",
+      "tabla": "sesiones",
+      "contype": "p",
+      "definition": "PRIMARY KEY (sid)",
+      "referencia": null
+    },
+    {
+      "conname": "sesiones_sess_not_null",
+      "tabla": "sesiones",
+      "contype": "n",
+      "definition": "NOT NULL sess",
+      "referencia": null
+    },
+    {
+      "conname": "sesiones_sid_not_null",
+      "tabla": "sesiones",
+      "contype": "n",
+      "definition": "NOT NULL sid",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_activo_not_null",
+      "tabla": "usuarios",
+      "contype": "n",
+      "definition": "NOT NULL activo",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_id_not_null",
+      "tabla": "usuarios",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_nombre_key",
+      "tabla": "usuarios",
+      "contype": "u",
+      "definition": "UNIQUE (nombre)",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_nombre_not_null",
+      "tabla": "usuarios",
+      "contype": "n",
+      "definition": "NOT NULL nombre",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_password_hash_not_null",
+      "tabla": "usuarios",
+      "contype": "n",
+      "definition": "NOT NULL password_hash",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_pkey",
+      "tabla": "usuarios",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_rol_check",
+      "tabla": "usuarios",
+      "contype": "c",
+      "definition": "CHECK (((rol)::text = ANY ((ARRAY['administrador'::character varying, 'operador'::character varying, 'consulta'::character varying])::text[])))",
+      "referencia": null
+    },
+    {
+      "conname": "usuarios_rol_not_null",
+      "tabla": "usuarios",
+      "contype": "n",
+      "definition": "NOT NULL rol",
+      "referencia": null
+    }
+  ],
+  "counts": {
+    "agentes": 15,
+    "bodegas": 15,
+    "contenedores": 30,
+    "declaraciones": 15,
+    "detalles": 30,
+    "eventos": 20,
+    "existencias": 31,
+    "funcionarios": 15,
+    "inspecciones": 30,
+    "lotes": 30,
+    "movimientos": 34,
+    "operaciones": 33,
+    "operadores": 15,
+    "paises": 15,
+    "partidas": 15,
+    "productos": 15,
+    "sesiones": 5,
+    "usuarios": 3
+  }
+}

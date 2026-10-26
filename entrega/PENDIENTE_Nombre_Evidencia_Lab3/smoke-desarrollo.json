@@ -1,0 +1,13 @@
+{
+  "web": "http://127.0.0.1:5173",
+  "api": "http://127.0.0.1:4310",
+  "database": "aduana",
+  "login": "aprobado",
+  "dashboard": {
+    "declaraciones": "15",
+    "retenidos": "10"
+  },
+  "filtroChinaBodega2": "aprobado",
+  "erroresJavaScript": [],
+  "scope": "Demostración real de desarrollo, independiente de E2E aduana_test"
+}

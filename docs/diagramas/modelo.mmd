@@ -1,0 +1,155 @@
+erDiagram
+  agentes {
+    bigint id
+    character_varying_40_ licencia
+    character_varying_160_ nombre
+    boolean activo
+  }
+  bodegas {
+    bigint id
+    character_varying_30_ codigo
+    character_varying_160_ nombre
+    numeric_16_3_ capacidad_kg
+    boolean activo
+  }
+  contenedores {
+    bigint id
+    character_varying_30_ codigo
+    bigint declaracion_id
+    bigint pais_id
+    date fecha_recepcion
+  }
+  declaraciones {
+    bigint id
+    character_varying_40_ numero
+    bigint operador_id
+    bigint agente_id
+    date fecha
+    character_varying_20_ regimen
+    character_varying_20_ estado
+    character_3_ moneda
+  }
+  detalles {
+    bigint id
+    bigint declaracion_id
+    integer linea
+    bigint producto_id
+    bigint pais_id
+    numeric_16_3_ cantidad
+    numeric_16_4_ valor_unitario
+    numeric_6_3_ tarifa_aplicada
+    character_varying_160_ producto_nombre
+    character_varying_10_ unidad
+  }
+  eventos {
+    bigint id
+    bigint lote_id
+    bigint usuario_id
+    character_varying_30_ accion
+    character_varying_500_ motivo
+    timestamp_with_time_zone fecha
+  }
+  existencias {
+    bigint id
+    bigint lote_id
+    bigint bodega_id
+    numeric_16_3_ cantidad
+  }
+  funcionarios {
+    bigint id
+    character_varying_30_ codigo
+    character_varying_160_ nombre
+    boolean activo
+  }
+  inspecciones {
+    bigint id
+    bigint lote_id
+    bigint funcionario_id
+    character_varying_15_ resultado
+    character_varying_1000_ observaciones
+    timestamp_with_time_zone fecha
+    bigint usuario_id
+  }
+  lotes {
+    bigint id
+    character_varying_40_ codigo
+    bigint detalle_id
+    character_varying_15_ estado
+    timestamp_with_time_zone creado_en
+    timestamp_with_time_zone liberado_en
+  }
+  movimientos {
+    bigint id
+    bigint lote_id
+    bigint bodega_id
+    character_varying_20_ tipo
+    numeric_16_3_ cantidad
+    timestamp_with_time_zone fecha
+    character_varying_500_ motivo
+    bigint usuario_id
+    uuid operacion_id
+  }
+  operaciones {
+    uuid clave
+    bigint usuario_id
+    jsonb payload
+    timestamp_with_time_zone creado_en
+  }
+  operadores {
+    bigint id
+    character_varying_40_ identificacion
+    character_varying_160_ nombre
+    boolean activo
+  }
+  paises {
+    bigint id
+    character_2_ codigo
+    character_varying_100_ nombre
+  }
+  partidas {
+    bigint id
+    character_varying_20_ codigo
+    character_varying_160_ nombre
+    numeric_6_3_ tarifa
+  }
+  productos {
+    bigint id
+    character_varying_40_ sku
+    character_varying_160_ nombre
+    bigint partida_id
+    character_varying_10_ unidad
+    boolean activo
+  }
+  sesiones {
+    character_varying sid
+    json sess
+    timestamp_without_time_zone expire
+  }
+  usuarios {
+    bigint id
+    character_varying_100_ nombre
+    text password_hash
+    character_varying_15_ rol
+    boolean activo
+  }
+  declaraciones ||--o{ contenedores : "declaracion_id"
+  paises ||--o{ contenedores : "pais_id"
+  agentes ||--o{ declaraciones : "agente_id"
+  operadores ||--o{ declaraciones : "operador_id"
+  declaraciones ||--o{ detalles : "declaracion_id"
+  paises ||--o{ detalles : "pais_id"
+  productos ||--o{ detalles : "producto_id"
+  lotes ||--o{ eventos : "lote_id"
+  usuarios ||--o{ eventos : "usuario_id"
+  bodegas ||--o{ existencias : "bodega_id"
+  lotes ||--o{ existencias : "lote_id"
+  funcionarios ||--o{ inspecciones : "funcionario_id"
+  lotes ||--o{ inspecciones : "lote_id"
+  usuarios ||--o{ inspecciones : "usuario_id"
+  detalles ||--o{ lotes : "detalle_id"
+  bodegas ||--o{ movimientos : "bodega_id"
+  lotes ||--o{ movimientos : "lote_id"
+  operaciones ||--o{ movimientos : "operacion_id"
+  usuarios ||--o{ movimientos : "usuario_id"
+  usuarios ||--o{ operaciones : "usuario_id"
+  partidas ||--o{ productos : "partida_id"

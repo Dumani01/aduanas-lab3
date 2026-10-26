@@ -1,0 +1,51 @@
+{
+  "name": "inventario-aduana",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "tsx watch apps/api/src/server.ts",
+    "dev:web": "npm run dev -w apps/web -- --host 127.0.0.1",
+    "build": "tsc -p apps/api/tsconfig.json && npm run build -w apps/web",
+    "start": "tsx apps/api/src/server.ts",
+    "db:migrate": "tsx scripts/database.ts migrate",
+    "db:seed": "tsx scripts/database.ts seed",
+    "demo:credentials": "tsx scripts/configure-demo-accounts.ts",
+    "test": "tsx --test tests/integration/*.test.ts",
+    "lint": "npm run lint -w apps/web",
+    "test:e2e": "npm test && playwright test",
+    "db:provision": "node scripts/provision.mjs",
+    "n8n:generate": "node scripts/n8n-workflow.mjs",
+    "n8n:prepare": "node scripts/n8n-prepare-local.mjs",
+    "n8n:verify-sql": "node scripts/n8n-verify-sql.mjs",
+    "n8n:start": "node scripts/n8n-local.mjs start",
+    "n8n:connect-chat": "node scripts/n8n-connect-chat.mjs",
+    "status": "node scripts/status.mjs"
+  },
+  "dependencies": {
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/express": "^5.0.3",
+    "@types/express-session": "^1.18.2",
+    "@types/pg": "^8.15.5",
+    "@types/supertest": "^6.0.3",
+    "@viz-js/viz": "^3.31.0",
+    "concurrently": "^9.2.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.5",
+    "typescript": "~6.0.3"
+  }
+}

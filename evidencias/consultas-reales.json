@@ -1,0 +1,731 @@
+{
+  "database": "aduana",
+  "fechaReferencia": "2026-10-23",
+  "counts": {
+    "agentes": 15,
+    "bodegas": 15,
+    "contenedores": 30,
+    "declaraciones": 15,
+    "detalles": 30,
+    "eventos": 20,
+    "existencias": 31,
+    "funcionarios": 15,
+    "inspecciones": 30,
+    "lotes": 30,
+    "movimientos": 34,
+    "operaciones": 33,
+    "operadores": 15,
+    "paises": 15,
+    "partidas": 15,
+    "productos": 15,
+    "sesiones": 5,
+    "usuarios": 3
+  },
+  "reconciliacionDiferencias": 0,
+  "resultados": {
+    "importaciones": {
+      "parametros": [
+        "2026-10-01",
+        "2026-11-01"
+      ],
+      "sql": "SELECT numero,fecha,importador,valor,moneda FROM reporting.valor_declaraciones WHERE regimen='IMPORTACION' AND fecha >= $1::date AND fecha < $2::date ORDER BY fecha,id",
+      "filas": [
+        {
+          "numero": "DUA-2026-00001",
+          "fecha": "2026-10-01T06:00:00.000Z",
+          "importador": "Aurora Solar Demo",
+          "valor": "10395.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00002",
+          "fecha": "2026-10-02T06:00:00.000Z",
+          "importador": "Circuito Norte Demo",
+          "valor": "12780.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00003",
+          "fecha": "2026-10-03T06:00:00.000Z",
+          "importador": "Rueda Verde Demo",
+          "valor": "15405.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00004",
+          "fecha": "2026-10-04T06:00:00.000Z",
+          "importador": "Café del Horizonte Demo",
+          "valor": "18270.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00005",
+          "fecha": "2026-10-05T06:00:00.000Z",
+          "importador": "Oleaginosas del Valle Demo",
+          "valor": "21375.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00006",
+          "fecha": "2026-10-06T06:00:00.000Z",
+          "importador": "Motores del Puerto Demo",
+          "valor": "24720.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00007",
+          "fecha": "2026-10-07T06:00:00.000Z",
+          "importador": "Textiles Brisa Demo",
+          "valor": "28305.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00008",
+          "fecha": "2026-10-08T06:00:00.000Z",
+          "importador": "Luz del Istmo Demo",
+          "valor": "32130.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00009",
+          "fecha": "2026-10-09T06:00:00.000Z",
+          "importador": "Hidráulica del Bosque Demo",
+          "valor": "36195.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00010",
+          "fecha": "2026-10-10T06:00:00.000Z",
+          "importador": "Polímeros Sendero Demo",
+          "valor": "40500.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00011",
+          "fecha": "2026-10-11T06:00:00.000Z",
+          "importador": "Color y Espacio Demo",
+          "valor": "45045.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00012",
+          "fecha": "2026-10-12T06:00:00.000Z",
+          "importador": "Herramientas Roble Demo",
+          "valor": "49830.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00013",
+          "fecha": "2026-10-13T06:00:00.000Z",
+          "importador": "Metales del Alba Demo",
+          "valor": "54855.0000",
+          "moneda": "USD"
+        },
+        {
+          "numero": "DUA-2026-00014",
+          "fecha": "2026-10-14T06:00:00.000Z",
+          "importador": "Repuestos del Camino Demo",
+          "valor": "60120.0000",
+          "moneda": "USD"
+        }
+      ],
+      "milisegundos": 9.513,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "retenidos": {
+      "parametros": [],
+      "sql": "SELECT lote,producto,bodega,cantidad,unidad,origen FROM reporting.inventario WHERE estado='RETENIDO' AND cantidad>0 ORDER BY bodega_id,lote_id",
+      "filas": [
+        {
+          "lote": "LOT-2026-0001",
+          "producto": "Panel solar",
+          "bodega": "Bodega 2 — inspección",
+          "cantidad": "110.000",
+          "unidad": "unidad",
+          "origen": "China"
+        },
+        {
+          "lote": "LOT-2026-0016",
+          "producto": "Panel solar",
+          "bodega": "Bodega 2 — inspección",
+          "cantidad": "55.000",
+          "unidad": "unidad",
+          "origen": "Estados Unidos"
+        },
+        {
+          "lote": "LOT-2026-0004",
+          "producto": "Café en grano",
+          "bodega": "Depósito 04",
+          "cantidad": "140.000",
+          "unidad": "kg",
+          "origen": "México"
+        },
+        {
+          "lote": "LOT-2026-0019",
+          "producto": "Panel solar",
+          "bodega": "Depósito 04",
+          "cantidad": "70.000",
+          "unidad": "unidad",
+          "origen": "China"
+        },
+        {
+          "lote": "LOT-2026-0007",
+          "producto": "Tejido de algodón",
+          "bodega": "Depósito 07",
+          "cantidad": "170.000",
+          "unidad": "kg",
+          "origen": "Brasil"
+        },
+        {
+          "lote": "LOT-2026-0022",
+          "producto": "Panel solar",
+          "bodega": "Depósito 07",
+          "cantidad": "85.000",
+          "unidad": "unidad",
+          "origen": "Estados Unidos"
+        },
+        {
+          "lote": "LOT-2026-0010",
+          "producto": "Resina industrial",
+          "bodega": "Depósito 10",
+          "cantidad": "200.000",
+          "unidad": "kg",
+          "origen": "Perú"
+        },
+        {
+          "lote": "LOT-2026-0025",
+          "producto": "Panel solar",
+          "bodega": "Depósito 10",
+          "cantidad": "100.000",
+          "unidad": "unidad",
+          "origen": "China"
+        },
+        {
+          "lote": "LOT-2026-0013",
+          "producto": "Alambre de cobre",
+          "bodega": "Depósito 13",
+          "cantidad": "230.000",
+          "unidad": "kg",
+          "origen": "Japón"
+        },
+        {
+          "lote": "LOT-2026-0028",
+          "producto": "Panel solar",
+          "bodega": "Depósito 13",
+          "cantidad": "115.000",
+          "unidad": "unidad",
+          "origen": "Estados Unidos"
+        }
+      ],
+      "milisegundos": 4.248,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "pais-contenedores": {
+      "parametros": [],
+      "sql": "WITH c AS(SELECT origen,count(*) AS cantidad FROM reporting.contenedores GROUP BY origen) SELECT * FROM c WHERE cantidad=(SELECT max(cantidad) FROM c) ORDER BY origen",
+      "filas": [
+        {
+          "origen": "Alemania",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Argentina",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Brasil",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Canadá",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Chile",
+          "cantidad": "2"
+        },
+        {
+          "origen": "China",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Colombia",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Corea del Sur",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Costa Rica",
+          "cantidad": "2"
+        },
+        {
+          "origen": "España",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Estados Unidos",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Japón",
+          "cantidad": "2"
+        },
+        {
+          "origen": "México",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Panamá",
+          "cantidad": "2"
+        },
+        {
+          "origen": "Perú",
+          "cantidad": "2"
+        }
+      ],
+      "milisegundos": 1.727,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "importador-valor": {
+      "parametros": [],
+      "sql": "WITH v AS(SELECT importador,sum(valor) AS valor FROM reporting.valor_declaraciones WHERE estado<>'ANULADA' GROUP BY operador_id,importador) SELECT *, 'USD' AS moneda FROM v WHERE valor=(SELECT max(valor) FROM v) ORDER BY importador",
+      "filas": [
+        {
+          "importador": "Precisión del Pacífico Demo",
+          "valor": "65625.0000",
+          "moneda": "USD"
+        }
+      ],
+      "milisegundos": 2.438,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "inspecciones": {
+      "parametros": [],
+      "sql": "SELECT * FROM reporting.inspecciones WHERE trim(observaciones)<>'' ORDER BY fecha,id",
+      "filas": [
+        {
+          "id": "1",
+          "lote_id": "1",
+          "lote": "LOT-2026-0001",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Adriana Montes (ficticia)"
+        },
+        {
+          "id": "2",
+          "lote_id": "2",
+          "lote": "LOT-2026-0002",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Bruno Vargas (ficticio)"
+        },
+        {
+          "id": "3",
+          "lote_id": "3",
+          "lote": "LOT-2026-0003",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Camila Soto (ficticia)"
+        },
+        {
+          "id": "4",
+          "lote_id": "4",
+          "lote": "LOT-2026-0004",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Darío Fuentes (ficticio)"
+        },
+        {
+          "id": "5",
+          "lote_id": "5",
+          "lote": "LOT-2026-0005",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Estela Marín (ficticia)"
+        },
+        {
+          "id": "6",
+          "lote_id": "6",
+          "lote": "LOT-2026-0006",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Fabio Serrano (ficticio)"
+        },
+        {
+          "id": "7",
+          "lote_id": "7",
+          "lote": "LOT-2026-0007",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Gabriela Luna (ficticia)"
+        },
+        {
+          "id": "8",
+          "lote_id": "8",
+          "lote": "LOT-2026-0008",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Hugo Acosta (ficticio)"
+        },
+        {
+          "id": "9",
+          "lote_id": "9",
+          "lote": "LOT-2026-0009",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Irene Pacheco (ficticia)"
+        },
+        {
+          "id": "10",
+          "lote_id": "10",
+          "lote": "LOT-2026-0010",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Julián Miranda (ficticio)"
+        },
+        {
+          "id": "11",
+          "lote_id": "11",
+          "lote": "LOT-2026-0011",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Karla Villalobos (ficticia)"
+        },
+        {
+          "id": "12",
+          "lote_id": "12",
+          "lote": "LOT-2026-0012",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Luis Ocampo (ficticio)"
+        },
+        {
+          "id": "13",
+          "lote_id": "13",
+          "lote": "LOT-2026-0013",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Mariela Chaves (ficticia)"
+        },
+        {
+          "id": "14",
+          "lote_id": "14",
+          "lote": "LOT-2026-0014",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Nicolás Blanco (ficticio)"
+        },
+        {
+          "id": "15",
+          "lote_id": "15",
+          "lote": "LOT-2026-0015",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Olivia Peralta (ficticia)"
+        },
+        {
+          "id": "16",
+          "lote_id": "16",
+          "lote": "LOT-2026-0016",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Adriana Montes (ficticia)"
+        },
+        {
+          "id": "17",
+          "lote_id": "17",
+          "lote": "LOT-2026-0017",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Bruno Vargas (ficticio)"
+        },
+        {
+          "id": "18",
+          "lote_id": "18",
+          "lote": "LOT-2026-0018",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Camila Soto (ficticia)"
+        },
+        {
+          "id": "19",
+          "lote_id": "19",
+          "lote": "LOT-2026-0019",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Darío Fuentes (ficticio)"
+        },
+        {
+          "id": "20",
+          "lote_id": "20",
+          "lote": "LOT-2026-0020",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Estela Marín (ficticia)"
+        },
+        {
+          "id": "21",
+          "lote_id": "21",
+          "lote": "LOT-2026-0021",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Fabio Serrano (ficticio)"
+        },
+        {
+          "id": "22",
+          "lote_id": "22",
+          "lote": "LOT-2026-0022",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Gabriela Luna (ficticia)"
+        },
+        {
+          "id": "23",
+          "lote_id": "23",
+          "lote": "LOT-2026-0023",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Hugo Acosta (ficticio)"
+        },
+        {
+          "id": "24",
+          "lote_id": "24",
+          "lote": "LOT-2026-0024",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Irene Pacheco (ficticia)"
+        },
+        {
+          "id": "25",
+          "lote_id": "25",
+          "lote": "LOT-2026-0025",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Julián Miranda (ficticio)"
+        },
+        {
+          "id": "26",
+          "lote_id": "26",
+          "lote": "LOT-2026-0026",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Karla Villalobos (ficticia)"
+        },
+        {
+          "id": "27",
+          "lote_id": "27",
+          "lote": "LOT-2026-0027",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Luis Ocampo (ficticio)"
+        },
+        {
+          "id": "28",
+          "lote_id": "28",
+          "lote": "LOT-2026-0028",
+          "resultado": "RETENER",
+          "observaciones": "Verificar documentación de origen (demostración)",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Mariela Chaves (ficticia)"
+        },
+        {
+          "id": "29",
+          "lote_id": "29",
+          "lote": "LOT-2026-0029",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Nicolás Blanco (ficticio)"
+        },
+        {
+          "id": "30",
+          "lote_id": "30",
+          "lote": "LOT-2026-0030",
+          "resultado": "APROBADO",
+          "observaciones": "Revisión de demostración conforme",
+          "fecha": "2026-10-16T18:00:00.000Z",
+          "funcionario": "Olivia Peralta (ficticia)"
+        }
+      ],
+      "milisegundos": 5.99,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "stock-producto": {
+      "parametros": [
+        1
+      ],
+      "sql": "SELECT producto,bodega,unidad,sum(cantidad) AS cantidad,sum(sum(cantidad)) OVER(PARTITION BY producto,unidad) AS total_producto FROM reporting.inventario WHERE producto_id=$1 GROUP BY producto,bodega_id,bodega,unidad ORDER BY bodega_id",
+      "filas": [
+        {
+          "producto": "Panel solar",
+          "bodega": "Bodega 2 — inspección",
+          "unidad": "unidad",
+          "cantidad": "225.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 03",
+          "unidad": "unidad",
+          "cantidad": "65.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 04",
+          "unidad": "unidad",
+          "cantidad": "70.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 05",
+          "unidad": "unidad",
+          "cantidad": "75.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 06",
+          "unidad": "unidad",
+          "cantidad": "80.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 07",
+          "unidad": "unidad",
+          "cantidad": "85.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 08",
+          "unidad": "unidad",
+          "cantidad": "90.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 09",
+          "unidad": "unidad",
+          "cantidad": "95.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 10",
+          "unidad": "unidad",
+          "cantidad": "100.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 11",
+          "unidad": "unidad",
+          "cantidad": "105.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 12",
+          "unidad": "unidad",
+          "cantidad": "110.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 13",
+          "unidad": "unidad",
+          "cantidad": "115.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 14",
+          "unidad": "unidad",
+          "cantidad": "120.000",
+          "total_producto": "1460.000"
+        },
+        {
+          "producto": "Panel solar",
+          "bodega": "Depósito 15",
+          "unidad": "unidad",
+          "cantidad": "125.000",
+          "total_producto": "1460.000"
+        }
+      ],
+      "milisegundos": 3.961,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "china-bodega2": {
+      "parametros": [],
+      "sql": "SELECT lote,producto,bodega,cantidad,unidad,origen FROM reporting.inventario WHERE origen='China' AND estado='RETENIDO' AND bodega_id=2 AND cantidad>0 ORDER BY lote_id",
+      "filas": [
+        {
+          "lote": "LOT-2026-0001",
+          "producto": "Panel solar",
+          "bodega": "Bodega 2 — inspección",
+          "cantidad": "110.000",
+          "unidad": "unidad",
+          "origen": "China"
+        }
+      ],
+      "milisegundos": 2.627,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    },
+    "movimientos": {
+      "parametros": [
+        1,
+        "2026-10-01T00:00:00-06:00",
+        "2026-11-01T00:00:00-06:00"
+      ],
+      "sql": "SELECT * FROM reporting.movimientos WHERE lote_id=$1 AND fecha>=$2 AND fecha<$3 ORDER BY fecha,id",
+      "filas": [
+        {
+          "id": "1",
+          "lote_id": "1",
+          "lote": "LOT-2026-0001",
+          "bodega_id": "2",
+          "bodega": "Bodega 2 — inspección",
+          "tipo": "RECEPCION",
+          "cantidad": "110.000",
+          "fecha": "2026-10-16T15:01:00.000Z",
+          "motivo": "Recepción de demostración",
+          "unidad": "unidad"
+        }
+      ],
+      "milisegundos": 2.608,
+      "agente": "NO EJECUTADO: falta credencial de modelo"
+    }
+  }
+}

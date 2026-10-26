@@ -1,0 +1,43 @@
+{
+  "targets": {
+    "sqlP95Ms": 150,
+    "apiDashboardP95Ms": 300
+  },
+  "equipo": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-1235U",
+    "memoriaGB": 8,
+    "os": "win32",
+    "release": "10.0.26200",
+    "node": "v24.19.0"
+  },
+  "database": "aduana_perf",
+  "scope": "Volumen sintético aislado; sin LLM ni carga multiusuario.",
+  "counts": {
+    "lotes": "5030",
+    "movimientos": "5034",
+    "declaraciones": "5015"
+  },
+  "sql": {
+    "retenidos": {
+      "samples": 30,
+      "p95ms": 4.58,
+      "passed": true
+    },
+    "china-bodega2": {
+      "samples": 30,
+      "p95ms": 5.797,
+      "passed": true
+    },
+    "importador-valor": {
+      "samples": 30,
+      "p95ms": 7.466,
+      "passed": true
+    }
+  },
+  "apiDashboard": {
+    "samples": 30,
+    "p95ms": 25.208,
+    "passed": true
+  },
+  "timestamp": "2026-10-23T19:04:25.898Z"
+}

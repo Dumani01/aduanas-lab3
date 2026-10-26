@@ -1,0 +1,18 @@
+{
+  "runs": [
+    {
+      "database": "aduana_repro_a_avance",
+      "instalacion": "aprobada",
+      "movimientos": 34,
+      "reconciliacionDiferencias": 0,
+      "reejecucion": "rechazada sin borrados implícitos"
+    },
+    {
+      "database": "aduana_repro_b_avance",
+      "instalacion": "aprobada",
+      "movimientos": 34,
+      "reconciliacionDiferencias": 0,
+      "reejecucion": "rechazada sin borrados implícitos"
+    }
+  ]
+}

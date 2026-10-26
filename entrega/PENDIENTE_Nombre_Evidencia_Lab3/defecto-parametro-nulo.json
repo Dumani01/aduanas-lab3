@@ -1,0 +1,11 @@
+{
+  "database": "aduana_test",
+  "observado": {
+    "resultado": {
+      "clave": "e0f6aafd-f2f3-4b45-b967-1a9281f358ef",
+      "repetida": false
+    }
+  },
+  "esperado": "rechazo de tipo NULL",
+  "rollback": true
+}

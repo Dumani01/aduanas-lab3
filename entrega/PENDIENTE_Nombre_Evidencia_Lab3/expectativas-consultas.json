@@ -1,0 +1,14 @@
+{
+  "scope": "SQL sin agente LLM",
+  "passed": 8,
+  "expected": [
+    "14 declaraciones importación",
+    "10 lotes retenidos positivos",
+    "15 países empatados, dos contenedores",
+    "Operador 15: 65625 USD",
+    "30 inspecciones con observación",
+    "1460 unidades producto 1",
+    "China bodega 2: lote1, 110 unidades",
+    "Lote1 en octubre: recepción110"
+  ]
+}

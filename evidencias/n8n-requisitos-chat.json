@@ -1,0 +1,8 @@
+{
+  "readyToConfigure": false,
+  "problems": [
+    "Vincular una credencial válida al modelo conectado al agente",
+    "Publicar el workflow después de completar el modelo"
+  ],
+  "scope": "Comprueba vínculos y publicación; no ejecuta ni valida respuestas del modelo"
+}

@@ -1,0 +1,10 @@
+{
+  "importaciones": "SELECT numero,fecha,importador,valor,moneda FROM reporting.valor_declaraciones WHERE regimen='IMPORTACION' AND fecha >= $1::date AND fecha < $2::date ORDER BY fecha,id",
+  "retenidos": "SELECT lote,producto,bodega,cantidad,unidad,origen FROM reporting.inventario WHERE estado='RETENIDO' AND cantidad>0 ORDER BY bodega_id,lote_id",
+  "pais-contenedores": "WITH c AS(SELECT origen,count(*) AS cantidad FROM reporting.contenedores GROUP BY origen) SELECT * FROM c WHERE cantidad=(SELECT max(cantidad) FROM c) ORDER BY origen",
+  "importador-valor": "WITH v AS(SELECT importador,sum(valor) AS valor FROM reporting.valor_declaraciones WHERE estado<>'ANULADA' GROUP BY operador_id,importador) SELECT *, 'USD' AS moneda FROM v WHERE valor=(SELECT max(valor) FROM v) ORDER BY importador",
+  "inspecciones": "SELECT * FROM reporting.inspecciones WHERE trim(observaciones)<>'' ORDER BY fecha,id",
+  "stock-producto": "SELECT producto,bodega,unidad,sum(cantidad) AS cantidad,sum(sum(cantidad)) OVER(PARTITION BY producto,unidad) AS total_producto FROM reporting.inventario WHERE producto_id=$1 GROUP BY producto,bodega_id,bodega,unidad ORDER BY bodega_id",
+  "china-bodega2": "SELECT lote,producto,bodega,cantidad,unidad,origen FROM reporting.inventario WHERE origen='China' AND estado='RETENIDO' AND bodega_id=2 AND cantidad>0 ORDER BY lote_id",
+  "movimientos": "SELECT * FROM reporting.movimientos WHERE lote_id=$1 AND fecha>=$2 AND fecha<$3 ORDER BY fecha,id"
+}

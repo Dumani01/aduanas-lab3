@@ -1,0 +1,9 @@
+export const catalogDefinitions: Record<string, { title: string; description: string; fields: [string, string, string][] }> = {
+  paises: { title: 'Países', description: 'Procedencia de las mercancías y los contenedores.', fields: [['codigo', 'Código ISO (2 letras)', 'text'], ['nombre', 'Nombre', 'text']] },
+  operadores: { title: 'Operadores comerciales', description: 'Importadores y exportadores vinculados a las declaraciones.', fields: [['identificacion', 'Identificación', 'text'], ['nombre', 'Nombre comercial', 'text'], ['activo', 'Activo', 'checkbox']] },
+  agentes: { title: 'Agentes aduanales', description: 'Representantes registrados para la gestión documental.', fields: [['licencia', 'Licencia', 'text'], ['nombre', 'Nombre', 'text'], ['activo', 'Activo', 'checkbox']] },
+  partidas: { title: 'Partidas arancelarias', description: 'Clasificaciones ilustrativas. No constituyen tarifas legales.', fields: [['codigo', 'Código', 'text'], ['nombre', 'Descripción', 'text'], ['tarifa', 'Tarifa académica (%)', 'number']] },
+  productos: { title: 'Productos', description: 'Catálogo de mercancías y sus unidades de medida.', fields: [['sku', 'SKU', 'text'], ['nombre', 'Nombre del producto', 'text'], ['partida_id', 'Partida', 'partidas'], ['unidad', 'Unidad de medida', 'unidad'], ['activo', 'Activo', 'checkbox']] },
+  bodegas: { title: 'Bodegas', description: 'Ubicaciones físicas. La capacidad en kg solo se aplica a existencias en kg.', fields: [['codigo', 'Código', 'text'], ['nombre', 'Nombre', 'text'], ['capacidad_kg', 'Capacidad (kg)', 'number'], ['activo', 'Activo', 'checkbox']] },
+  funcionarios: { title: 'Funcionarios', description: 'Personal responsable de las inspecciones.', fields: [['codigo', 'Código', 'text'], ['nombre', 'Nombre', 'text'], ['activo', 'Activo', 'checkbox']] },
+};

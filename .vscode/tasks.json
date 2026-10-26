@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Aduana: desarrollo", "type": "shell", "command": "npm.cmd run dev", "isBackground": true, "problemMatcher": [] },
+    { "label": "Aduana: build", "type": "shell", "command": "npm.cmd run build", "group": "build", "problemMatcher": ["$tsc"] },
+    { "label": "Aduana: pruebas", "type": "shell", "command": "npm.cmd test", "group": "test", "problemMatcher": [] },
+    { "label": "Aduana: E2E", "type": "shell", "command": "npm.cmd run test:e2e", "group": "test", "problemMatcher": [] }
+  ]
+}

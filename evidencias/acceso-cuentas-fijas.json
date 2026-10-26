@@ -1,0 +1,23 @@
+{
+  "scope": "Acceso real de las tres cuentas locales; sin contraseñas en esta evidencia",
+  "resultados": [
+    {
+      "usuario": "admin",
+      "rol": "administrador",
+      "login": "aprobado",
+      "recarga": "aprobada"
+    },
+    {
+      "usuario": "operador",
+      "rol": "operador",
+      "login": "aprobado",
+      "recarga": "aprobada"
+    },
+    {
+      "usuario": "consulta",
+      "rol": "consulta",
+      "login": "aprobado",
+      "recarga": "aprobada"
+    }
+  ]
+}

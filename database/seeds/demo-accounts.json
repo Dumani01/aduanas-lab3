@@ -1,0 +1,5 @@
+[
+  { "nombre": "admin", "rol": "administrador", "password": "Aduana2026!" },
+  { "nombre": "operador", "rol": "operador", "password": "Operador2026!" },
+  { "nombre": "consulta", "rol": "consulta", "password": "Consulta2026!" }
+]

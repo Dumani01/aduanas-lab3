@@ -1,0 +1,6 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "API local (puerto alternativo)", "type": "node", "request": "launch", "runtimeExecutable": "node", "runtimeArgs": ["--import", "tsx"], "program": "${workspaceFolder}/apps/api/src/server.ts", "cwd": "${workspaceFolder}", "envFile": "${workspaceFolder}/.env", "env": { "PORT": "3003", "APP_ORIGINS": "http://127.0.0.1:3003" }, "console": "integratedTerminal", "skipFiles": ["<node_internals>/**"] }
+  ]
+}

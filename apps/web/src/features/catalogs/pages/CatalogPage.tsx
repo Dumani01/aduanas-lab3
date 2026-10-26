@@ -1,0 +1,26 @@
+import { useState } from 'react';
+import { catalogDefinitions } from '../catalogDefinitions';
+import { useLoaderData, useRevalidator, useSearchParams } from 'react-router-dom';
+import { api, type PageData, type References, type Row } from '../../../lib/api';
+import { Table } from '../../../components/Table';
+import { ErrorBox } from '../../../components/Feedback';
+import { useUser } from '../../../app/session';
+
+export function CatalogPage() {
+  const { name, data, refs } = useLoaderData() as { name: string; data: PageData; refs: References };
+  return <CatalogView key={name} name={name} data={data} refs={refs} />;
+}
+function CatalogView({name,data,refs}: {name:string;data:PageData;refs:References}) {
+  const def = catalogDefinitions[name]; const user = useUser(); const revalidator = useRevalidator();
+  const [params, setParams] = useSearchParams(); const [editing, setEditing] = useState<Row | null>(null); const [showForm, setShowForm] = useState(false);
+  const [error, setError] = useState<unknown>(null); const [success, setSuccess] = useState(''); const [busy, setBusy] = useState(false);
+  return <><div className="page-heading"><div><p className="eyebrow">CATÁLOGOS</p><h1>{def.title}</h1><p>{def.description}</p></div>{user.rol === 'administrador' && <button className="button" onClick={() => { setEditing(null); setShowForm(!showForm); setError(null); }}>+ Nuevo registro</button>}</div>
+  {success && <p className="notice" role="status">{success}</p>}{error !== null && <ErrorBox error={error} />}
+  {showForm && <section className="panel form-panel"><h2>{editing ? 'Editar registro' : 'Nuevo registro'}</h2><form key={`${name}-${editing?.id || 'new'}`} onSubmit={async e => {
+    e.preventDefault(); setBusy(true); setError(null); setSuccess(''); const form = new FormData(e.currentTarget); const input: Record<string, unknown> = {};
+    for (const [field, , type] of def.fields) input[field] = type === 'checkbox' ? form.has(field) : form.get(field);
+    try { await api(`/catalogos/${name}${editing ? `/${editing.id}` : ''}`, { method: editing ? 'PUT' : 'POST', body: JSON.stringify(input) }); setShowForm(false); setEditing(null); setSuccess('Registro guardado en PostgreSQL.'); revalidator.revalidate(); } catch (err) { setError(err); } finally { setBusy(false); }
+  }}><div className="form-grid">{def.fields.map(([field, label, type]) => <label key={field}>{label}{type === 'checkbox' ? <input type="checkbox" name={field} defaultChecked={editing ? Boolean(editing[field]) : true} /> : type === 'unidad' ? <select name={field} defaultValue={String(editing?.[field] || 'unidad')}><option>unidad</option><option>kg</option><option>litro</option></select> : refs[type] ? <select name={field} required defaultValue={String(editing?.[field] || '')}><option value="">Seleccionar…</option>{refs[type].map(r => <option key={String(r.id)} value={String(r.id)}>{r.nombre} ({r.codigo})</option>)}</select> : <input name={field} type={type} required maxLength={field === 'nombre' ? 160 : 30} step={type === 'number' ? '0.001' : undefined} min={type === 'number' ? 0 : undefined} defaultValue={String(editing?.[field] ?? '')} />}</label>)}</div><div className="actions"><button className="button" disabled={busy}>{busy ? 'Guardando…' : 'Guardar registro'}</button><button type="button" className="button secondary" onClick={() => setShowForm(false)}>Cancelar</button></div></form></section>}
+  <section className="panel"><form className="filters" onSubmit={e => { e.preventDefault(); const form = new FormData(e.currentTarget); setParams({ q: String(form.get('q') || '') }); }}><label>Buscar por nombre<input name="q" placeholder={`Buscar en ${def.title.toLowerCase()}…`} defaultValue={params.get('q') || ''} /></label><button className="button secondary">Buscar</button><span className="result-count">{data.total} registros</span></form>
+  <Table caption={def.title} rows={data.rows} columns={[...def.fields.map(([key, label, type]) => ({ key, label, render: (r: Row) => type === 'checkbox' ? (r[key] ? 'Activo' : 'Inactivo') : refs[type] ? String(refs[type].find(ref => ref.id === r[key])?.nombre || 'Sin referencia') : String(r[key]) })), ...(user.rol === 'administrador' ? [{ key: 'acciones', label: 'Acciones', render: (r: Row) => <div className="row-actions"><button className="text-button" onClick={() => { setEditing(r); setShowForm(true); setError(null); }}>Editar</button><button className="text-button danger" disabled={busy} onClick={async () => { if (!confirm(`¿Eliminar ${r.nombre}? Los registros con historia vinculada no se pueden eliminar.`)) return; setBusy(true); try { await api(`/catalogos/${name}/${r.id}`, { method: 'DELETE' }); setSuccess('Registro eliminado.'); revalidator.revalidate(); } catch (err) { setError(err); } finally { setBusy(false); } }}>Eliminar</button></div> }] : [])]} /><div className="pagination"><button className="button secondary" disabled={data.page <= 1} onClick={() => { params.set('page', String(data.page - 1)); setParams(params); }}>Anterior</button><span>Página {data.page}</span><button className="button secondary" disabled={data.page * 50 >= data.total} onClick={() => { params.set('page', String(data.page + 1)); setParams(params); }}>Siguiente</button></div></section></>;
+}

@@ -1,0 +1,36 @@
+{
+  "fasePendiente": "9 — agente n8n; después 10 — chat web con modelo real",
+  "servicios": {
+    "web": {
+      "url": "http://127.0.0.1:5173/",
+      "disponible": true,
+      "status": 200
+    },
+    "api": {
+      "url": "http://127.0.0.1:4310/api/health",
+      "disponible": true,
+      "status": 200
+    },
+    "n8n": {
+      "url": "http://127.0.0.1:5678/healthz",
+      "disponible": true,
+      "status": 200
+    },
+    "postgres": {
+      "disponible": true,
+      "base": "aduana",
+      "rol": "aduana_reader",
+      "filas": "31"
+    }
+  },
+  "integracion": {
+    "credencialesLocalesPreparadas": true,
+    "modeloConfigurado": false,
+    "sqlN8nVerificado": true
+  },
+  "pendientes": [
+    "Documento original del laboratorio",
+    "Datos académicos de integrantes/docente/sección",
+    "Credencial del modelo y ocho respuestas reales del agente"
+  ]
+}
